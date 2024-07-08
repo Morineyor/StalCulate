@@ -3,11 +3,13 @@ from nicegui import ui
 
 def darkMode():
     dark = ui.dark_mode()
-    ui.label('Сменить режим: ')
-    ui.button('Тёмный', on_click=dark.enable)
-    ui.button('Светлый', on_click=dark.disable)
-darkMode()
+    with ui.row().classes('flex flex-col justify-end ml-auto px-auto pb-10 items-center'):
+        ui.label('Смена режима:').classes('flex flex-row py-auto my-auto font-mono text-center text-lg')
+        with ui.button_group():
+            ui.button(on_click=dark.enable, icon='dark_mode').props('outline')
+            ui.button(on_click=dark.disable, icon='light_mode').props('outline')
 
+darkMode()
 
 table = ui.aggrid({
     'defaultColDef': {'flex': 1},
