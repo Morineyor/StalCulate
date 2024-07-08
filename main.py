@@ -6,7 +6,7 @@ def darkMode():
     ui.label('Сменить режим: ')
     ui.button('Тёмный', on_click=dark.enable)
     ui.button('Светлый', on_click=dark.disable)
-
+darkMode()
 
 
 table = ui.aggrid({
@@ -30,5 +30,5 @@ def update():
 ui.button(text='Редактировать', on_click=update).classes('container mx-auto px-auto text-center')
 
 
-darkMode()
+
 ui.run()
