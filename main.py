@@ -1,10 +1,13 @@
 import time
 from nicegui import ui
 
-dark = ui.dark_mode()
-ui.label('Сменить режим: ')
-ui.button('Тёмный', on_click=dark.enable)
-ui.button('Светлый', on_click=dark.disable)
+def darkMode():
+    dark = ui.dark_mode()
+    ui.label('Сменить режим: ')
+    ui.button('Тёмный', on_click=dark.enable)
+    ui.button('Светлый', on_click=dark.disable)
+
+
 
 table = ui.aggrid({
     'defaultColDef': {'flex': 1},
@@ -26,4 +29,6 @@ def update():
 
 ui.button(text='Редактировать', on_click=update).classes('container mx-auto px-auto text-center')
 
+
+darkMode()
 ui.run()
