@@ -12,13 +12,13 @@ table = ui.aggrid({
         {'name': 'Тактический запас', 'price': 29000, 'quantity': 15},
     ],
     'rowSelection': 'multiple',
-}).classes('max-h-40')
+}).classes('container m-auto p-auto border-separate text-center')
 
 def update():
     table.options['rowData'][0]['price'] += 1
     table.update()
 
 
-ui.button(text='Редактировать', on_click=update)
+ui.button(text='Редактировать', on_click=update).classes('container mx-auto px-auto text-center')
 
 ui.run()
